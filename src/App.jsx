@@ -9,13 +9,21 @@ import { useState } from "react";
 function App() {
 const [addedSessions, setAddedSessions] = useState({});
 
+ const toggleSession = (sessionId) => {
+    setAddedSessions((prev) => ({
+      ...prev,
+      [sessionId]: !prev[sessionId],
+    }));
+  };
+
   return (
     <>
 <NavBar />
 <Routes>
-<Route path='/Home' element={<SearchPage addedSessions={addedSessions} setAddedSessions={setAddedSessions}/>} />
-<Route path='/Register' element={<RegisterForm addedSessions={addedSessions}/>} />
-<Route path='/MySchedule' element={<MySchedule />} />
+<Route path='/Home' element={<SearchPage addedSessions={addedSessions}
+              toggleSession={toggleSession}/>} />
+<Route path='/Register' element={<RegisterForm />} />
+<Route path='/MySchedule' element={<MySchedule addedSessions={addedSessions}/>} />
 </Routes>
     </>
   )

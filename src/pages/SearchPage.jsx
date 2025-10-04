@@ -3,14 +3,9 @@ import Button from "../components/Button";
 import SearchBar from "../components/SearchComponent";
 
 
-export default function SearchPage({addedSessions, setAddedSessions}) {
+export default function SearchPage({addedSessions, toggleSession}) {
 
-const handleClick = (sessionId) => {
-    setAddedSessions(prev => ({
-        ...prev,
-        [sessionId]: !prev[sessionId]
-    }));
-}
+
 console.log(addedSessions);
     return (
     <div >
@@ -23,11 +18,14 @@ console.log(addedSessions);
               <p>Track: {session.track}</p>
               <p>Starts: {new Date(session.startsAt).toDateString()} - {session.durationMins} mins</p>
                           <Button
-                            onClick={() => handleClick(session.id)}
+                            onClick={() => toggleSession(session.id)}
                             buttonText={isAdded ? "Remove from schedule" : "Add to schedule"}
                             colour={isAdded ? "bg-red-200" : "bg-blue-200"}
                         />
               <p>Speaker: {session.speaker}</p>
+           <div className="flex justify-end">
+        <p className="border-2 rounded-xl bg-blue-100 p-2">{session.track}</p>
+    </div>
             </div>
 })}
     </div>

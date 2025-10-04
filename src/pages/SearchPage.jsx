@@ -16,7 +16,7 @@ const fuse = useMemo(() => {
     });
   }, []);
 
-  const visibleSessions = useMemo(() => {
+  const searchedSessions = useMemo(() => {
     const searchWord = search.trim();
     if (!searchWord) return SESSIONS;
     return fuse.search(searchWord).map((r) => r.item);
@@ -27,7 +27,7 @@ const fuse = useMemo(() => {
       <SearchBar value={search}
         onSearch={setSearch} placeholder={"Search by title, track or speaker"}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleSessions.map((session) => {
+          {searchedSessions.map((session) => {
             const isAdded = addedSessions[session.id];
             return <div className="border-4 rounded-lg border-blue-500 p-4 m-4" key={session.id}>
               <h3>{session.title}</h3>

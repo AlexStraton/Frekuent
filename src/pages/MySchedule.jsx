@@ -7,7 +7,7 @@ const selectedSessions = useMemo(() => {
 })
 console.log("fultered", selectedSessions);
     return (
-        <div>
+        <div className="p-4 border-2 rounded-lg m-4">
             <h2>My Schedule</h2>
             {selectedSessions.length === 0 ? (
         <p>No sessions yet. Go to Search to add some.</p>

@@ -8,7 +8,7 @@ export default function SearchPage({addedSessions, toggleSession}) {
 
 console.log(addedSessions);
     return (
-    <div >
+    <div className="p-4 border-2 rounded-lg m-4">
       <SearchBar placeholder={"Search by title, track or speaker"}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SESSIONS.map((session) => {

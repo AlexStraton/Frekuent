@@ -5,7 +5,7 @@ export default function MySchedule({addedSessions}) {
 const selectedSessions = useMemo(() => {
  return SESSIONS.filter(session => addedSessions[session.id]);
 })
-console.log("fultered", selectedSessions);
+
     return (
         <div className="p-4 border-2 rounded-lg m-4">
             <h2>My Schedule</h2>

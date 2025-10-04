@@ -6,8 +6,10 @@ import RegisterForm from './components/RegisterForm'
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
+
 function App() {
 const [addedSessions, setAddedSessions] = useState({});
+
 
  const toggleSession = (sessionId) => {
     setAddedSessions((prev) => ({

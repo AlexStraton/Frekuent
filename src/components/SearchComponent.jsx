@@ -1,6 +1,7 @@
-import React from "react";
 
-function SearchBar({ placeholder, onSearch }) {
+
+function SearchBar({ placeholder, onSearch, value }) {
+
   const handleInputChange = (event) => {
     const value = event.target.value;
     onSearch(value);
@@ -11,6 +12,7 @@ function SearchBar({ placeholder, onSearch }) {
       <input
         type="text"
         placeholder={placeholder || "Search...."}
+        value={value}
         onChange={handleInputChange}
         className="w-full max-w-md py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />

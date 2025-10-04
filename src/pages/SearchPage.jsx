@@ -1,12 +1,9 @@
 import { SESSIONS } from "../api";
 import Button from "../components/Button";
 import SearchBar from "../components/SearchComponent";
-import { useState } from "react";
 
-export default function SearchPage() {
-    console.log(SESSIONS);
 
-const [addedSessions, setAddedSessions] = useState({});
+export default function SearchPage({addedSessions, setAddedSessions}) {
 
 const handleClick = (sessionId) => {
     setAddedSessions(prev => ({
@@ -14,12 +11,11 @@ const handleClick = (sessionId) => {
         [sessionId]: !prev[sessionId]
     }));
 }
-
+console.log(addedSessions);
     return (
     <div >
       <SearchBar placeholder={"Search by title, track or speaker"}/>
-      <h2>Search Page</h2>
-      <input type="text" placeholder="Search..." />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SESSIONS.map((session) => {
             const isAdded = addedSessions[session.id];
             return <div className="border-4 rounded-lg border-blue-500 p-4 m-4" key={session.id}>
@@ -35,5 +31,6 @@ const handleClick = (sessionId) => {
             </div>
 })}
     </div>
+     </div>
   );
 }

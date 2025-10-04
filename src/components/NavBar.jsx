@@ -3,13 +3,15 @@
 
 export default function NavBar() {
   return (
-    <nav className="navbar">
-         <img className="ml-8 h-20 cursor-pointer" src="/assets/SessionFinder.png"></img>
-      <h1>My Website</h1>
-      <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">My Schedule</a></li>
-        <li><a href="#services">Register</a></li>
+    <nav className="flex justify-between items-center p-4">
+        <div className="flex items-center">
+         <img className="h-16 sm:h-20 md:h-24 lg:h-32 cursor-pointer" src="/assets/SessionFinder.png"></img>
+      <h1 className="text-sm sm:text-xs md:text-lg lg:text-2xl font-bold">Session Finder</h1>
+        </div>
+      <ul className="flex text-sm sm:text-xs md:text-lg lg:text-2xl font-bold">
+        <li className="hover:bg-sky-400 rounded transition-all duration-600 ease-in-out px-6"><a href="#home">Home</a></li>
+        <li className="hover:bg-sky-400 rounded transition-all duration-300 ease-in-out px-6"><a href="#about">My Schedule</a></li>
+        <li className="hover:bg-sky-400 rounded transition-all duration-300 ease-in-out px-6"><a href="#services">Register</a></li>
       </ul>
     </nav>
   );

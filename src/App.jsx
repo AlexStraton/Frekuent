@@ -8,24 +8,14 @@ import { useState } from "react";
 
 
 function App() {
-const [addedSessions, setAddedSessions] = useState({});
-
-
- const toggleSession = (sessionId) => {
-    setAddedSessions((prev) => ({
-      ...prev,
-      [sessionId]: !prev[sessionId],
-    }));
-  };
 
   return (
     <>
 <NavBar />
 <Routes>
-<Route path='/Home' element={<SearchPage addedSessions={addedSessions}
-              toggleSession={toggleSession}/>} />
+<Route path='/' element={<SearchPage />} />
 <Route path='/Register' element={<RegisterForm />} />
-<Route path='/MySchedule' element={<MySchedule addedSessions={addedSessions}/>} />
+<Route path='/MySchedule' element={<MySchedule />} />
 </Routes>
     </>
   )

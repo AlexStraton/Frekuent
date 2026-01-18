@@ -26,3 +26,7 @@ export async function registerAttendee(payload) {
   }
   return { ok: true, registrationId: "REG-" + Math.floor(100000 + Math.random() * 900000) };
 }
+
+export async function test() {
+  return 0
+}
